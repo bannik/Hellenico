@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+main()
+{
+    FILE *in = fopen("time.in", "r");
+    FILE *out = fopen("time.out", "w");
+    int h, m, s, alls, temp, g;
+
+    fscanf(in, "%d %d %d", &h, &m, &s);
+    
+    alls = h * 3600 + m * 60 + s;
+    &g = 2;
+    alls = alls * 2;
+    h = div(alls, 3600);
+    temp = alls % 3600;
+    m = div(temp,60);
+    s = temp % 60;
+    fprintf(out, "%d %d %d", h, m, s);
+    fclose (in);
+    fclose (out);
+return 0;
+}
+
